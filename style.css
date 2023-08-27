@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Cairo';
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #222222;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+/* Start Starting Animation */
+  #starting_animation {
+    margin-top: 100px;
+  }
+
+  #starting_animation .img img {
+    animation: UpAndDown 7s infinite ease-in-out;
+  }
+
+  #starting_animation .loading img {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+  }
+
+  @keyframes UpAndDown {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+/* End Starting Animation */
+
+/* Start Adiya */
+.start_button {
+  display: none;
+}
+.start_button {
+  color: white;
+  margin: 120px;
+  font-size: 32px;
+  width: 350px; 
+}
+
+.start_button button {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: blueviolet;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/* End Adiya */
+
+/* Start Game Section */
+.game {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 100px;
+  height: 100vh;
+  width: 100%;
+}
+
+.game .button_options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+/* End Game Section */
+
+}
+
+@media screen and (min-width: 1200px) {
+  body > * {
+    display: none;
+  }
+}
