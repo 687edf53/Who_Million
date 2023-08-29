@@ -6,27 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
   <title>Who Will Win Million</title>
 </head>
 
 <body>
-  <div id="starting_animation">
-    <div class="img"><img src="./Images/who_img.png" alt="logo"></div>
-    <div class="loading"><img src="./Images/loading-10.gif" alt="loading"></div>
+  <div id="starting_animation none">
+    <div class="img none"><img src="./Images/who_img.png" alt="logo"></div>
+    <div class="loading none"><img src="./Images/loading-10.gif" alt="loading"></div>
   </div>
-  <div class="start_button">
+  <div class="start_button none">
     <p id="adiya"></p>
     <button>دخول</button>
   </div>
 
-  <div class="game">
+  <div class="game flex">
     <div class="logo"><img src="./Images/who_img.png" alt="logo"></div>
+
     <div class="button_options">
-      <button>مشترك جديد</button>
-      <button>تجارب</button>
-      <button>تجارب</button>
-      <button>تجارب</button>
+      <button class="btn-sq2 none past-levels" style="--i: #FC6C64">
+        <span>مراحل سابقة</span>
+      </button>
+      <button class="btn-sq2" id="newUser" style="--i: #FC6C64">
+        <span>مشترك جديد</span>
+      </button>
+
+      <button class="btn-sq2" style="--i: #C2D421">
+        <span>تقييم المسابقة</span>
+      </button>
+
+      <button class="btn-sq2" style="--i: #2AACED">
+        <span>سياسة الخصوصية</span>
+      </button>
+
+      <button class="btn-sq2" style="--i: #22DDCA">
+        <span>شارك رصيدك مع أصدقائك</span>
+      </button>
     </div>
+
+    <!-- Start New User Form -->
+    <div id="newUserForm">
+      <input type="text" name="add" placeholder="Write Your Name" id="userName">
+      <input type="submit" value="Add" class="btn-sq2">
+    </div>
+    <!-- End New User Form -->
   </div>
 
   <script src="main.js"></script>

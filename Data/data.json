@@ -1,0 +1,60 @@
+{
+  "game_id": "123456",
+  "questions": [
+    {
+      "question_id": "q1",
+      "question_text": "What is the capital of France?",
+      "correct_answer": "Paris",
+      "options": ["Paris", "London", "Berlin", "Madrid"]
+    },
+    {
+      "question_id": "q2",
+      "question_text": "Which planet is known as the Red Planet?",
+      "correct_answer": "Mars",
+      "options": ["Mars", "Venus", "Jupiter", "Saturn"]
+    },
+    {
+      "question_id": "q3",
+      "question_text": "What is the largest mammal?",
+      "correct_answer": "Blue Whale",
+      "options": ["Elephant", "Giraffe", "Blue Whale", "Hippopotamus"]
+    }
+  ],
+  "participants": [
+    {
+      "participant_id": "p1",
+      "name": "Alice",
+      "total_winnings": 10000
+    },
+    {
+      "participant_id": "p2",
+      "name": "Bob",
+      "total_winnings": 5000
+    },
+    {
+      "participant_id": "p3",
+      "name": "Charlie",
+      "total_winnings": 15000
+    }
+  ],
+  "rounds": [
+    {
+      "round_number": 1,
+      "question_id": "q1",
+      "participants_won": ["p1", "p2"],
+      "remaining_participants": ["p3"]
+    },
+    {
+      "round_number": 2,
+      "question_id": "q2",
+      "participants_won": ["p1"],
+      "remaining_participants": ["p2", "p3"]
+    },
+    {
+      "round_number": 3,
+      "question_id": "q3",
+      "participants_won": [],
+      "remaining_participants": ["p1", "p2", "p3"]
+    }
+  ]
+}
