@@ -40,34 +40,36 @@ Start_Button.addEventListener("click", () => {
 
 // newUser Section
 
-const newUserButton = document.getElementById('newUser');
-const newUserForm = document.getElementById('newUserForm');
-const newUserName = document.getElementById('userName')
-const addUserButton = document.querySelector('#newUserForm > input[type=\'submit\']')
+const newUserButton = document.getElementById("newUser");
+const newUserForm = document.getElementById("newUserForm");
+const newUserName = document.getElementById("userName");
+const addUserButton = document.querySelector(
+  "#newUserForm > input[type='submit']"
+);
 
-const past_levels = document.querySelector('.past-levels')
+const past_levels = document.querySelector(".past-levels");
 
-newUserButton.addEventListener('click', () => {
+newUserButton.addEventListener("click", () => {
   newUserForm.style.display = `flex`;
-})
+});
 
-addUserButton.addEventListener('click', () => {
-  if(newUserName.value != '') {
+addUserButton.addEventListener("click", () => {
+  if (newUserName.value != "") {
     let obj = {
       title: newUserName.value,
       id: new Date(),
-      exist: false
-    }
+      exist: false,
+    };
     localStorage.setItem("user", JSON.stringify(obj));
     newUserForm.style.display = "none";
     newUserButton.style.display = "none";
-    past_levels.classList.remove('none')
+    past_levels.classList.remove("none");
   }
-  
-})
+});
 
 // Start Magic Buttons
-const magic_button = document.querySelectorAll(".btn-sq2").forEach((btn) => {
+const magic_button = document.querySelectorAll(".btn-sq2");
+magic_button.forEach((btn) => {
   btn.addEventListener("mousemove", (e) => {
     // place of mouse in x
     let x = e.offsetX;
@@ -78,23 +80,20 @@ const magic_button = document.querySelectorAll(".btn-sq2").forEach((btn) => {
     // height of button
     let btnHeight = btn.clientHeight;
     // mouse in x - button width / 2
-    let transX = (x - btnWidth / 2);
+    let transX = x - btnWidth / 2;
     // mouse in y - button height / 2
-    let transY = (y - btnHeight / 2);
+    let transY = y - btnHeight / 2;
     btn.style.transform = `translateX(${transX}px)  translateY(${transY}px)`;
-
 
     let mx = e.pageX - btn.offsetLeft;
     let my = e.pageY - btn.offsetTop;
-    btn.style.setProperty('--x', mx + 'px')
-    btn.style.setProperty('--y', my + 'px')
+    btn.style.setProperty("--x", mx + "px");
+    btn.style.setProperty("--y", my + "px");
   });
 
-  btn.addEventListener('mouseout', (e) => {
-    btn.style.transform = ''
-  })
-
-  
+  btn.addEventListener("mouseout", (e) => {
+    btn.style.transform = "";
+  });
 });
 magic_button.forEach((btn) => {
   btn.addEventListener("touchmove", (e) => {
@@ -125,3 +124,9 @@ magic_button.forEach((btn) => {
   });
 });
 // End Magic Buttons
+
+if (localStorage.getItem("user")) {
+  newUserButton.style.display = `none`;
+  past_levels.style.display = `block`;
+  alert("hello " + JSON.parse(localStorage.getItem("user")).title);
+}

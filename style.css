@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color:blanchedalmond;
+  background-color: blanchedalmond;
 }
 
 
@@ -116,7 +116,7 @@ body {
 
 
 .btn-sq2 {
-  width: 60%;
+  width: 35%;
   height: 45px;
   position: relative;
   cursor: pointer;
@@ -129,11 +129,19 @@ body {
   transition: transform 0.1s;
 }
 
-.btn-sq2 span {
-  position: relative;
-  pointer-events: none;
+.btn-sq2 span a {
   color: #636263;
   letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.btn-sq2 span {
+  position: relative;
+  /* pointer-events: none; */
+  color: #636263;
+  letter-spacing: 1.5px;
+  text-decoration: none;
   transition: 0.5s;
 }
 
@@ -155,8 +163,8 @@ body {
 }
 
 .btn-sq2:hover:before {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 /* Start New User Form */
@@ -165,7 +173,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
+  width: 50vw;
   height: 40%;
   display: none;
   align-items: center;
@@ -191,7 +199,7 @@ body {
 }
 
 #newUserForm>input[type='text']::placeholder {
-  color:rgb(3, 196, 103);
+  color: rgb(3, 196, 103);
 }
 
 #newUserForm>input[type='text'] {
