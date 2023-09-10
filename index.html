@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="win million, win, million, من سيربح, من سيربح المليون, المليون">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
@@ -21,28 +22,41 @@
   </div>
 
   <div class="game flex">
-    <div class="logo"><img src="./Images/who_img.png" alt="logo"></div>
+    <div class="logo">
+      <img src="./Images/who_img.png" alt="logo">
+      <h4 id="userNameWelcome">hello </h4>
+    </div>
 
     <div class="button_options">
-      <button class="btn-sq2 none past-levels" style="--i: #FC6C64">
-        <span>مراحل سابقة</span>
-      </button>
-      <button class="btn-sq2" id="newUser" style="--i: #FC6C64">
+      <a href="Pages/past_levels.html">
+      <button class="btn-sq2 none past-levels">
+          <span>مراحل سابقة</span>
+        </button>
+      </a>
+      <button class="btn-sq2" id="newUser">
         <span>مشترك جديد</span>
       </button>
 
-      <button class="btn-sq2" style="--i: #C2D421">
+    <a href="#">
+      <button class="btn-sq2">
         <span>تقييم المسابقة</span>
       </button>
+    </a>
 
-      <button class="btn-sq2" style="--i: #2AACED">
-        <span><a href="./Pages/privacy.html" target="_blank">سياسة الخصوصية</a></span>
+    <a href="./Pages/privacy.html" target="_blank">
+      <button class="btn-sq2">
+        <span>سياسة الخصوصية</span>
       </button>
+    </a>
 
-      <button class="btn-sq2" style="--i: #22DDCA">
-        <span>شارك رصيدك مع أصدقائك</span>
-      </button>
+      <a href="#">
+        <button class="btn-sq2">
+          <span>شارك رصيدك مع أصدقائك</span>
+        </button>
+      </a>
+
     </div>
+  </a>
 
     <!-- Start New User Form -->
     <div id="newUserForm">

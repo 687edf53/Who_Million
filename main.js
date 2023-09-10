@@ -64,69 +64,24 @@ addUserButton.addEventListener("click", () => {
     newUserForm.style.display = "none";
     newUserButton.style.display = "none";
     past_levels.classList.remove("none");
+    location.reload()
   }
 });
 
-// Start Magic Buttons
-const magic_button = document.querySelectorAll(".btn-sq2");
-magic_button.forEach((btn) => {
-  btn.addEventListener("mousemove", (e) => {
-    // place of mouse in x
-    let x = e.offsetX;
-    // place of mouse in y
-    let y = e.offsetY;
-    // width of button
-    let btnWidth = btn.clientWidth;
-    // height of button
-    let btnHeight = btn.clientHeight;
-    // mouse in x - button width / 2
-    let transX = x - btnWidth / 2;
-    // mouse in y - button height / 2
-    let transY = y - btnHeight / 2;
-    btn.style.transform = `translateX(${transX}px)  translateY(${transY}px)`;
-
-    let mx = e.pageX - btn.offsetLeft;
-    let my = e.pageY - btn.offsetTop;
-    btn.style.setProperty("--x", mx + "px");
-    btn.style.setProperty("--y", my + "px");
-  });
-
-  btn.addEventListener("mouseout", (e) => {
-    btn.style.transform = "";
-  });
-});
-magic_button.forEach((btn) => {
-  btn.addEventListener("touchmove", (e) => {
-    e.preventDefault(); // Prevent default touch action
-
-    // Touch position relative to the button
-    let touch = e.touches[0];
-    let x = touch.clientX - btn.getBoundingClientRect().left;
-    let y = touch.clientY - btn.getBoundingClientRect().top;
-
-    // Button dimensions
-    let btnWidth = btn.clientWidth;
-    let btnHeight = btn.clientHeight;
-
-    // Calculate translations
-    let transX = x - btnWidth / 2;
-    let transY = y - btnHeight / 2;
-
-    btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
-
-    // Set custom properties for animation (CSS Variables)
-    btn.style.setProperty("--x", x + "px");
-    btn.style.setProperty("--y", y + "px");
-  });
-
-  btn.addEventListener("touchend", () => {
-    btn.style.transform = "";
-  });
-});
-// End Magic Buttons
+let button_options = document.querySelector('.button_options')
 
 if (localStorage.getItem("user")) {
   newUserButton.style.display = `none`;
   past_levels.style.display = `block`;
-  alert("hello " + JSON.parse(localStorage.getItem("user")).title);
+  let userNameWelcome = document.getElementById('userNameWelcome')
+  userNameWelcome.textContent = `hello ${JSON.parse(localStorage.getItem('user')).title}`
+  let deleteNewButton = document.createElement('button')
+  deleteNewButton.classList.add('removeAccount')
+  deleteNewButton.textContent = `حذف الحساب`
+  button_options.appendChild(deleteNewButton)
+  deleteNewButton.addEventListener('click', () => {
+    location.reload()
+    localStorage.removeItem('user')
+    this.style.display = `none`
+  })
 }
